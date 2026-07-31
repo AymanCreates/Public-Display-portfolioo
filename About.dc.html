@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { background: #100F0A; }
+    * { box-sizing: border-box; }
+    a { color: #ECEAE2; text-decoration: none; }
+    a:hover { color: #E0623F; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.15; } }
+    image-slot { --is-fg: #ECEAE2; }
+  </style>
+</helmet>
+
+<div style="min-height: 100vh; background: #100F0A; color: #ECEAE2; font-family: 'Space Grotesk', sans-serif;">
+
+  <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-bg-color="#100F0A" style="background:#100F0A"><rect width="100" height="100" fill="#100F0A"/><text x="50" y="60" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="34" letter-spacing="-2" fill="#ECEAE2">PD</text></svg></template>
+
+  <div style="position: fixed; inset: 0; z-index: 40; pointer-events: none; background: radial-gradient(135% 115% at 50% 32%, rgba(224,98,63,0.06), transparent 46%), radial-gradient(100% 100% at 50% 62%, transparent 52%, rgba(0,0,0,0.5));"></div>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 20px 28px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.02em;">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <a href="./Floating Index.dc.html" style="text-transform: uppercase;">Public Display</a>
+      <div style="display: flex; align-items: center; gap: 10px; text-transform: uppercase;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #E0623F; animation: blink 2.4s ease-in-out infinite; display: inline-block;"></span>
+        <span>{{ brussels }} CEST</span>
+        <span style="opacity: 0.4; margin: 0 4px;">/</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;">
+      <span>About</span><span style="opacity: 0.5;">®</span>
+    </div>
+  </header>
+
+  <section style="padding: 190px 30px 90px; border-bottom: 1px solid rgba(236,234,226,0.14);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55; margin-bottom: 26px;">(About) — Studio Profile</div>
+    <h1 style="margin: 0; max-width: 16ch; font-weight: 500; font-size: clamp(40px, 6.4vw, 108px); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance;">A media production &amp; creative solutions agency, working between <span style="font-style: italic;">Cairo</span> and <span style="font-style: italic;">Brussels</span>.</h1>
+  </section>
+
+  <section style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; padding: 80px 30px; border-bottom: 1px solid rgba(236,234,226,0.14);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55;">01 — Who we are</div>
+    <div style="display: flex; flex-direction: column; gap: 28px; max-width: 40ch; font-size: clamp(19px, 1.9vw, 26px); line-height: 1.5; letter-spacing: -0.01em;">
+      <p style="margin: 0; text-wrap: pretty;">Public Display is a media production and creative solutions agency. Since 2018 we've built brands, films, and experiences at the meeting point of culture and craft.</p>
+      <p style="margin: 0; text-wrap: pretty; opacity: 0.8;">Two studios, one connected team — the energy of Cairo and the precision of Brussels, brought to every frame we make.</p>
+    </div>
+  </section>
+
+  <section style="position: relative; height: clamp(320px, 46vw, 620px); border-bottom: 1px solid rgba(236,234,226,0.14); overflow: hidden;">
+    <image-slot id="about-hero" shape="rect" placeholder="Studio / showreel still — drop image" style="width: 100%; height: 100%; display: block;"></image-slot>
+  </section>
+
+  <section style="padding: 80px 30px; border-bottom: 1px solid rgba(236,234,226,0.14);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55;">02 — What we do</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.4;">06 Capabilities</div>
+    </div>
+    <sc-for list="{{ capabilities }}" as="cap" hint-placeholder-count="6">
+      <div style="display: grid; grid-template-columns: 60px 1fr auto; gap: 24px; align-items: baseline; padding: 22px 0; border-top: 1px solid rgba(236,234,226,0.14);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; opacity: 0.5;">{{ cap.num }}</span>
+        <span style="font-size: clamp(24px, 3.4vw, 46px); font-weight: 500; letter-spacing: -0.02em;">{{ cap.title }}</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5; text-align: right; max-width: 22ch;">{{ cap.note }}</span>
+      </div>
+    </sc-for>
+  </section>
+
+  <section style="padding: 80px 30px; border-bottom: 1px solid rgba(236,234,226,0.14);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; margin-bottom: 44px;">03 — How we work</div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px;">
+      <sc-for list="{{ principles }}" as="p" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: clamp(22px, 2.4vw, 32px); font-weight: 500; letter-spacing: -0.02em;">{{ p.title }}</span>
+          <span style="font-size: 16px; line-height: 1.55; opacity: 0.72; text-wrap: pretty;">{{ p.body }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding: 80px 30px; border-bottom: 1px solid rgba(236,234,226,0.14);">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; margin-bottom: 44px;">04 — Studios</div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="position: relative; height: 240px; overflow: hidden; border: 1px solid rgba(236,234,226,0.14);">
+          <image-slot id="about-cairo" shape="rect" placeholder="Cairo studio — drop image" style="width: 100%; height: 100%; display: block;"></image-slot>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: clamp(28px, 3vw, 40px); font-weight: 500; letter-spacing: -0.02em;">Cairo</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.55;">{{ cairo }} EET</span>
+        </div>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5;">North Africa · Production hub</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 18px;">
+        <div style="position: relative; height: 240px; overflow: hidden; border: 1px solid rgba(236,234,226,0.14);">
+          <image-slot id="about-brussels" shape="rect" placeholder="Brussels studio — drop image" style="width: 100%; height: 100%; display: block;"></image-slot>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: clamp(28px, 3vw, 40px); font-weight: 500; letter-spacing: -0.02em;">Brussels</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: 0.55;">{{ brussels }} CEST</span>
+        </div>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5;">Europe · Creative &amp; strategy</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding: 120px 30px 130px; display: flex; flex-direction: column; align-items: center; gap: 34px; text-align: center;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.55;">05 — Say hello</div>
+    <div style="font-size: clamp(38px, 7vw, 104px); font-weight: 500; line-height: 0.98; letter-spacing: -0.03em; text-wrap: balance;">Let's build<br>something worth<br>displaying.</div>
+    <a href="mailto:hello@publicdisplay.studio" style="font-family: 'JetBrains Mono', monospace; font-size: clamp(15px, 1.6vw, 20px); letter-spacing: 0.04em; border-bottom: 1px solid rgba(236,234,226,0.5); padding-bottom: 4px;">hello@publicdisplay.studio</a>
+    <div style="display: flex; gap: 26px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6;">
+      <a href="./Floating Index.dc.html">Selected Works</a>
+      <span style="opacity: 0.4;">/</span>
+      <span>Cairo — Brussels</span>
+    </div>
+  </section>
+
+  <footer style="padding: 22px 30px; border-top: 1px solid rgba(236,234,226,0.14); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.5;">
+    <span>Public Display ©2026</span>
+    <span>Media Production &amp; Creative Solutions</span>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cairo: "", brussels: "" };
+
+  capabilities = [
+    { num: "01", title: "Film & Video Production", note: "Concept to delivery" },
+    { num: "02", title: "Creative Direction", note: "Vision & art direction" },
+    { num: "03", title: "Brand & Identity", note: "Systems that travel" },
+    { num: "04", title: "Motion & Design", note: "For every screen" },
+    { num: "05", title: "Content Strategy", note: "Ideas with reach" },
+    { num: "06", title: "Post-Production", note: "Edit, grade, sound" },
+  ];
+
+  principles = [
+    { title: "Ideas first", body: "Every project starts with a point of view, never a template. We find the angle, then we build." },
+    { title: "Made to move", body: "We design for motion and the way people actually watch — screens, feeds, and rooms alike." },
+    { title: "Two cities, one team", body: "Cairo and Brussels work as a single studio, so a project can be local anywhere." },
+  ];
+
+  fmt(tz) {
+    try {
+      return new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: tz }).format(new Date());
+    } catch (e) { return "--:--"; }
+  }
+  componentDidMount() {
+    this.tick = () => this.setState({ cairo: this.fmt("Africa/Cairo"), brussels: this.fmt("Europe/Brussels") });
+    this.tick();
+    this.id = setInterval(this.tick, 1000);
+  }
+  componentWillUnmount() { clearInterval(this.id); }
+
+  renderVals() {
+    return {
+      capabilities: this.capabilities,
+      principles: this.principles,
+      cairo: this.state.cairo,
+      brussels: this.state.brussels,
+    };
+  }
+}
+</script>
+</body>
+</html>
